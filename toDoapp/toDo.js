@@ -24,6 +24,7 @@ AddItem.addEventListener('click',function(e){
         const remove = document.getElementsByClassName('remove');
            for(const removes of remove){
                removes.addEventListener("click",function(e){
+                   e.stopImmediatePropagation();
                  e.target.parentNode.parentNode.style.display="none"
                })
            } 
@@ -32,20 +33,13 @@ AddItem.addEventListener('click',function(e){
        const name = document.getElementsByClassName('name')
         for (const edits of edit){
             edits.addEventListener('click',function(e){
+                e.stopImmediatePropagation();
                 e.target.parentNode.parentNode.style.display="none";
-               
-              
-               for(const names of name){
-                  
+               for(const names of name){  
                 input.value =names.innerText;
-               
-               }
-              
+               }  
             })
-        }
-      
-       
-
+        } 
     }   
 })
  
